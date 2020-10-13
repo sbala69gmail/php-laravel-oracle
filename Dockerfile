@@ -39,11 +39,7 @@ RUN apk add --no-cache \
 # Install PECL and PEAR extensions
 RUN pecl install \
     imagick \
-    xdebug \
-    mongodb
-
-# create .ini file
-RUN echo "extension=mongodb.so" >> /usr/local/etc/php/conf.d/mongodb.ini
+    xdebug 
 
 # Install and enable php extensions
 RUN docker-php-ext-enable \
